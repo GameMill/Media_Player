@@ -17,6 +17,16 @@ namespace TvPlayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            if (!System.IO.File.Exists("settings.db"))
+            {
+                if (MessageBox.Show("Error.\nauto creating the settings.db.\nPlease update the TvShowsRoot in the settings.db file", "", MessageBoxButtons.OK) == DialogResult.OK)
+                    Settings.Instance.Save();
+                Application.Exit();
+                return;
+            }
+
+
             Application.Run(new Form1());
 
         }

@@ -51,12 +51,7 @@ namespace TvPlayer
         {
             InitializeComponent();
 
-            if (!System.IO.File.Exists("settings.db"))
-            {
-                if (MessageBox.Show("Error.\nauto creating the settings.db.\nPlease update the TvShowsRoot in the settings.db file", "", MessageBoxButtons.OK) == DialogResult.OK)
-                    Settings.Instance.Save();
-                    Application.Exit();
-            }
+            
                 
             Application.ApplicationExit += new EventHandler(this.OnApplicationExit);
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(this.OnApplicationExit);
