@@ -22,8 +22,9 @@ namespace TvPlayer
             }
         }
 
-        public int DefaultVolume { get; internal set; } = 100;
+        public int DefaultVolume { get; set; } = 100;
         public string TvShowsRoot { get; set; } = "";
+        public string Speaker { get; set; } = "";
 
         public void Save()
         {

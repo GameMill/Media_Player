@@ -109,11 +109,11 @@ namespace TvPlayer
                     }
                     
                     var media = new Media(libvlc, new Uri(Settings.Instance.TvShowsRoot + CurrentShow.Name + "\\" + CurrentEpisode.CurrentEpisode.Season + "\\" + CurrentEpisode.CurrentEpisode.Name));
-
+                    
                     videoView1.MediaPlayer.Play(media);
                     videoView1.MediaPlayer.Position = CurrentEpisode.Position;
                     videoView1.MediaPlayer.Volume = CurrentEpisode.Volume;
-             });
+            });
 
             //videoView1.MediaPlayer = mediaplayer;
             
@@ -344,7 +344,7 @@ namespace TvPlayer
         {
             foreach (var item in videoView1.MediaPlayer.AudioOutputDeviceEnum)
             {
-                if (item.Description.Contains("LG TV"))
+                if (item.Description.Contains(Settings.Instance.Speaker))
                 {
                     videoView1.MediaPlayer.SetOutputDevice(item.DeviceIdentifier);
                 }
